@@ -1,0 +1,99 @@
+.main {
+  color: black;
+}
+
+.main_object {
+  margin: auto;
+  padding-left: 70px;
+  padding-top: 100px;
+  width: 800px;
+  img {
+    position: relative;
+    width: 800px;
+    z-index: 4;
+    margin-top: 50px;
+  }
+  h1 {
+    margin-left: -150px;
+    position: relative;
+    z-index: 5;
+  }
+}
+
+.text-left {
+  position: fixed;
+  top: 50%;
+  left: 30px;
+  line-height: 100.2%;
+}
+
+.main h2 {
+  font-family: Fira Code;
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+.main h3 {
+  font-family: Fira Code;
+  font-weight: 500;
+}
+
+.home-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main p {
+  font-size: 0.7rem;
+}
+
+.projet__picture {
+  width: 250px;
+  height: 250px;
+}
+
+.section {
+  border-bottom: 0.5px #c4c4c4 solid;
+  padding: 75px;
+  padding-left: 400px;
+  &__projets {
+    overflow-x: scroll;
+    &__each {
+      display: flex;
+      margin-top: 50px;
+    }
+    p {
+      margin-bottom: -5px;
+    }
+  }
+  &__outils {
+    display: flex;
+    div {
+      margin-right: 60px;
+    }
+  }
+  &__contact {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
+.projet {
+  margin-right: 100px;
+  width: 300px;
+  p {
+    margin-bottom: 5px;
+  }
+  h5 {
+    margin-bottom: 5px;
+  }
+}
+
+.nomargin {
+  margin-bottom: -10px;
+}
+
+.envoyer {
+  margin-top: 60px;
+  margin-left: 30px;
+}
