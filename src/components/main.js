@@ -3,18 +3,53 @@ import React, { Component } from "react"
 import Layout from "../components/layout"
 
 import SEO from "../components/seo"
+import Fade from "react-reveal/Fade"
+import ScrollAnimation from "react-animate-on-scroll"
+import "animate.css/animate.min.css"
 
 import mainPic from "../images/mainPic.png"
 import mainPic2 from "../images/photoAnna.png"
 
+import qm from "../images/qmavocat.png"
+import alice11 from "../images/alice11.png"
+
 class Main extends Component {
   render() {
+    let d = new Date()
+    let day = d.getDay()
+    let today = ""
+
+    switch (day) {
+      case 1:
+        today = "LUNDI"
+        break
+      case 2:
+        today = "MARDI"
+        break
+      case 3:
+        today = "MERCREDI"
+        break
+      case 4:
+        today = "JEUDI"
+        break
+      case 5:
+        today = "VENDREDI"
+        break
+      case 6:
+        today = "SAMEDI"
+      case 7:
+        today = "DIMANCHE"
+        break
+    }
+
     return (
       <div>
         <SEO title="Main" />
-        <div className="main_object">
-          <img src={mainPic} alt="mainpic" />
-        </div>
+        <ScrollAnimation animateIn="fadeIn">
+          <div className="main_object">
+            <img src={mainPic2} alt="mainpic" />
+          </div>
+        </ScrollAnimation>
 
         <div className="text-left">
           <p>
@@ -31,6 +66,7 @@ class Main extends Component {
               />
             </svg>
           </p>
+
           <p>
             {" "}
             CE QUE JE FAIS: <br />
@@ -47,18 +83,36 @@ class Main extends Component {
 
         <div className="section">
           <p className="">
-            BIENVENUE ICI ! BONNE VISITE <b> & </b> BON DIMANCHE
+            BIENVENUE ICI ! BONNE VISITE <b> & </b> BON {today}{" "}
+            <svg
+              width="16"
+              height="12"
+              viewBox="0 0 41 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.023 18.33C3.042 18.361 3.065 18.389 3.089 18.413L19.007 35.327C19.122 35.449 19.278 35.519 19.451 35.524H19.463C19.626 35.524 19.78 35.462 19.898 35.348L37.28 18.54C37.288 18.534 37.356 18.472 37.397 18.432C37.431 18.4 37.459 18.367 37.465 18.351C39.427 16.319 40.508 13.649 40.508 10.834C40.508 4.86 35.648 0 29.673 0C25.763 0 22.175 2.094 20.254 5.48C18.334 2.093 14.746 0 10.835 0C4.86 0 6.94466e-07 4.86 6.94466e-07 10.834C-0.000999306 13.648 1.078 16.316 3.023 18.33ZM10.834 1.251C14.709 1.251 18.18 3.563 19.676 7.142C19.774 7.375 20 7.525 20.253 7.525C20.505 7.525 20.732 7.375 20.83 7.141C22.327 3.563 25.798 1.251 29.673 1.251C34.958 1.251 39.258 5.551 39.258 10.835C39.258 13.356 38.28 15.739 36.504 17.547C36.487 17.565 36.472 17.582 36.459 17.6L19.483 34.008L4.083 17.65C4.06 17.613 4.033 17.578 4.001 17.546C2.226 15.741 1.249 13.358 1.249 10.835C1.249 5.55 5.549 1.251 10.834 1.251Z"
+                fill="#FF2E6C"
+              />
+            </svg>
           </p>
-          <h2> Ce que je fais </h2>
+
+          <ScrollAnimation animateIn="fadeIn">
+            <h2> Ce que je fais </h2>
+          </ScrollAnimation>
           <p className="">CRÉATION DE SITES INTERNET</p>
           <p className="">
-            ENSEMBLE, NOUS DEFINISSONS VOS BESOINS ET VOS ATTENTES. APRES
-            DISCUSSION, REALISATION DES MAQUETTES. PUIS VALIDATION, ET
-            CONSTRUCTION.{" "}
+            NOUS DEFINISSONS VOS BESOINS ET VOS ATTENTES ENSEMBLE. REALISATION
+            DES MAQUETTES PUIS, APRES VALIDATION, CONSTRUCTION DU SITE ET REMISE
+            CLEF EN MAIN.{" "}
           </p>
         </div>
         <div className="section ">
-          <h2> Outils</h2>
+          <ScrollAnimation animateIn="fadeIn">
+            <h2> Outils</h2>
+          </ScrollAnimation>
+
           <div className="section__outils">
             <div>
               <p> DESIGN: </p>
@@ -74,95 +128,132 @@ class Main extends Component {
             </div>
           </div>
         </div>
-        <div className="section section__projets ">
-          <p> PROJETS </p>
-          <svg
-            width="84"
-            height="8"
-            viewBox="0 0 84 8"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M83.3536 4.35355C83.5488 4.15829 83.5488 3.84171 83.3536 3.64645L80.1716 0.464466C79.9763 0.269204 79.6597 0.269204 79.4645 0.464466C79.2692 0.659728 79.2692 0.976311 79.4645 1.17157L82.2929 4L79.4645 6.82843C79.2692 7.02369 79.2692 7.34027 79.4645 7.53553C79.6597 7.7308 79.9763 7.7308 80.1716 7.53553L83.3536 4.35355ZM0 4.5H83V3.5H0V4.5Z"
-              fill="black"
-            />
-          </svg>
-          <div className="section__projets__each">
-            <div className="projet">
-              <img className="projet__picture" src={mainPic} alt="mainpic" />
-              <p> 2019 </p>
-              <h5> Alice's website </h5>
-              <p>
-                {" "}
-                DESIGN <b> & </b> CODE{" "}
-              </p>
-            </div>
-            <div className="projet">
-              <img className="projet__picture" src={mainPic} alt="mainpic" />
-              <p> 2019 </p>
-              <h5> Alice's website </h5>
-              <p>
-                {" "}
-                DESIGN <b> & </b> CODE{" "}
-              </p>
-            </div>
-            <div className="projet">
-              <img className="projet__picture" src={mainPic} alt="mainpic" />
-              <p> 2019 </p>
-              <h5> Alice's website </h5>
-              <p>
-                {" "}
-                DESIGN <b> & </b>CODE{" "}
-              </p>
-            </div>
-            <div className="projet">
-              <img className="projet__picture" src={mainPic} alt="mainpic" />
-              <p> 2019 </p>
-              <h5> Alice's website </h5>
-              <p>
-                {" "}
-                DESIGN <b> & </b> CODE{" "}
-              </p>
-            </div>
-            <div className="projet">
-              <img className="projet__picture" src={mainPic} alt="mainpic" />
-              <p> 2019 </p>
-              <h5> Alice's website </h5>
-              <p>
-                {" "}
-                DESIGN <b> & </b> CODE{" "}
-              </p>
+
+        <ScrollAnimation animateIn="fadeIn">
+          <div className="section section__projets ">
+            <p> PROJETS </p>
+            <svg
+              width="84"
+              height="8"
+              viewBox="0 0 84 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M83.3536 4.35355C83.5488 4.15829 83.5488 3.84171 83.3536 3.64645L80.1716 0.464466C79.9763 0.269204 79.6597 0.269204 79.4645 0.464466C79.2692 0.659728 79.2692 0.976311 79.4645 1.17157L82.2929 4L79.4645 6.82843C79.2692 7.02369 79.2692 7.34027 79.4645 7.53553C79.6597 7.7308 79.9763 7.7308 80.1716 7.53553L83.3536 4.35355ZM0 4.5H83V3.5H0V4.5Z"
+                fill="black"
+              />
+            </svg>
+            <div className="section__projets__each">
+              <div className="projet">
+                <img className="projet__picture" src={mainPic} alt="mainpic" />
+                <p> 2019 </p>
+                <h5> La loge </h5>
+                <p>
+                  {" "}
+                  DESIGN <b> & </b> CODE{" "}
+                </p>
+              </div>
+              <div className="projet">
+                <img className="projet__picture" src={qm} alt="mainpic" />
+                <p> 2019 </p>
+                <h5> QM avocat </h5>
+                <p>
+                  {" "}
+                  DESIGN <b> & </b> CODE{" "}
+                </p>
+              </div>
+              <div className="projet">
+                <img className="projet__picture" src={alice11} alt="mainpic" />
+                <p> 2019 </p>
+                <h5> Alice's website </h5>
+                <p>
+                  {" "}
+                  DESIGN <b> & </b>CODE{" "}
+                </p>
+              </div>
+              <div className="projet">
+                <img className="projet__picture" src={mainPic} alt="mainpic" />
+                <p> 2018 </p>
+                <h5> Previous Portfolio </h5>
+                <p>
+                  {" "}
+                  DESIGN <b> & </b> CODE{" "}
+                </p>
+              </div>
+              <div className="projet">
+                <img className="projet__picture" src={mainPic} alt="mainpic" />
+                <p> 2018 </p>
+                <h5> EasyFork </h5>
+                <p>
+                  {" "}
+                  DESIGN <b> & </b> CODE{" "}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        </ScrollAnimation>
+        <ScrollAnimation animateIn="fadeIn">
+          <div className="section ">
+            <p> CONTACT </p>
+            <div className="section__contact">
+              <div>
+                {" "}
+                <form
+                  name="contact"
+                  netlify
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field"
+                >
+                  <h2>
+                    <label>
+                      <input type="text" name="name" placeholder="nom" />
+                    </label>
+                  </h2>
+                  <h2>
+                    <label>
+                      <input type="text" name="name" placeholder="prénom" />
+                    </label>
+                  </h2>
+                  <p>
+                    <label>
+                      <input type="email" name="email" placeholder="EMAIL" />
+                    </label>
+                  </p>
+                  <p>
+                    <textarea
+                      id="story"
+                      name="story"
+                      rows="3"
+                      cols="33"
+                      placeholder="Votre message ici"
+                    ></textarea>
+                  </p>
+                  <p>
+                    <button type="submit">ENVOYER</button>
+                    <br />
+                    <svg
+                      width="84"
+                      height="8"
+                      viewBox="0 0 84 8"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M83.3536 4.35355C83.5488 4.15829 83.5488 3.84171 83.3536 3.64645L80.1716 0.464466C79.9763 0.269204 79.6597 0.269204 79.4645 0.464466C79.2692 0.659728 79.2692 0.976311 79.4645 1.17157L82.2929 4L79.4645 6.82843C79.2692 7.02369 79.2692 7.34027 79.4645 7.53553C79.6597 7.7308 79.9763 7.7308 80.1716 7.53553L83.3536 4.35355ZM0 4.5H83V3.5H0V4.5Z"
+                        fill="black"
+                      />
+                    </svg>
+                  </p>
+                </form>
+              </div>
 
-        <div className="section ">
-          <p> CONTACT </p>
-          <div className="section__contact">
-            <div>
-              {" "}
-              <h2> nom prénom</h2> <p> E-MAIL </p>
-              <p> MESSAGE </p>
-            </div>
-
-            <div className="envoyer">
-              <p className="nomargin"> ENVOYER </p>
-              <svg
-                width="84"
-                height="8"
-                viewBox="0 0 84 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M83.3536 4.35355C83.5488 4.15829 83.5488 3.84171 83.3536 3.64645L80.1716 0.464466C79.9763 0.269204 79.6597 0.269204 79.4645 0.464466C79.2692 0.659728 79.2692 0.976311 79.4645 1.17157L82.2929 4L79.4645 6.82843C79.2692 7.02369 79.2692 7.34027 79.4645 7.53553C79.6597 7.7308 79.9763 7.7308 80.1716 7.53553L83.3536 4.35355ZM0 4.5H83V3.5H0V4.5Z"
-                  fill="black"
-                />
-              </svg>
+              <div className="envoyer">
+                <p className="nomargin"> ENVOYER </p>
+              </div>
             </div>
           </div>
-        </div>
+        </ScrollAnimation>
       </div>
     )
   }

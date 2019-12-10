@@ -21,7 +21,7 @@ const Header = ({ siteTitle }) => (
     >
       <p
         style={{
-          flex: `70%`,
+          flex: `0 0 70%`,
         }}
       >
         {" "}

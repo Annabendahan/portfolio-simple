@@ -206,7 +206,7 @@ body {
   font-family: Fira Code, serif;
   font-weight: normal;
   overflow: hidden;
-  background: #fff6f6;
+  background: map-get($colors, beige);
   word-wrap: break-word;
   font-kerning: normal;
   -moz-font-feature-settings: "kern", "liga", "clig", "calt";
@@ -254,8 +254,15 @@ h2 {
   font-family: "El Messiri", sans-serif;
   font-weight: 100;
   text-rendering: optimizeLegibility;
-  font-size: 8.25rem;
+  font-size: 3.25rem;
   line-height: 1.1;
+
+  @include breakpoint(m) {
+    font-size: 4.25rem;
+  }
+  @include breakpoint(l) {
+    font-size: 8.25rem;
+  }
 }
 h3 {
   margin-left: 0;
@@ -628,5 +635,8 @@ pre tt:after {
 }
 
 footer {
-  padding: 30px;
+  padding: 5px 30px;
+  p {
+    margin-bottom: 5px;
+  }
 }

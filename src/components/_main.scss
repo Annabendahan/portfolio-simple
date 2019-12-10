@@ -18,6 +18,9 @@
     position: relative;
     z-index: 5;
   }
+  @include breakpoint(xxl) {
+    padding-left: 170px;
+  }
 }
 
 .text-left {
@@ -55,15 +58,21 @@
 .section {
   border-bottom: 0.5px #c4c4c4 solid;
   padding: 75px;
-  padding-left: 400px;
+  padding-left: 100px;
   &__projets {
     overflow-x: scroll;
     &__each {
       display: flex;
+
       margin-top: 50px;
+      width: 2000px;
+      background: map-get($colors, beige);
+
+      position: relative;
+      z-index: 9;
     }
     p {
-      margin-bottom: -5px;
+      margin-bottom: -10px;
     }
   }
   &__outils {
@@ -76,6 +85,21 @@
     display: flex;
     align-items: flex-start;
   }
+  @include breakpoint(s) {
+    padding-left: 300px;
+  }
+  @include breakpoint(m) {
+    padding-left: 200px;
+  }
+  @include breakpoint(l) {
+    padding-left: 300px;
+  }
+  @include breakpoint(xl) {
+    padding-left: 400px;
+  }
+  @include breakpoint(xxl) {
+    padding-left: 700px;
+  }
 }
 
 .projet {
@@ -87,6 +111,13 @@
   h5 {
     margin-bottom: 5px;
   }
+  &:hover {
+    cursor: pointer;
+    transform: scale(0.98);
+    img {
+      opacity: 0.7;
+    }
+  }
 }
 
 .nomargin {
@@ -96,4 +127,46 @@
 .envoyer {
   margin-top: 60px;
   margin-left: 30px;
+}
+
+input {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+textarea {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+form {
+  h2 {
+    color: map-get($colors, primary) !important;
+  }
+}
+
+form button {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: black;
+  padding: 0px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+::placeholder {
+  color: map-get($colors, primary) !important;
+  opacity: 1;
+}
+
+label {
+  color: map-get($colors, primary) !important;
+}
+
+input:-internal-autofill-selected {
+  background: transparent !important;
 }

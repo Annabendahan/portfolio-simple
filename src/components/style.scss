@@ -1,4 +1,7 @@
-@import "main";
 @import "variables";
+
+@import "reset";
+@import "mixins";
 @import "layout";
 @import "index";
+@import "main";

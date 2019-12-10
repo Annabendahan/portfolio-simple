@@ -32,9 +32,9 @@ const Layout = ({ children }) => {
         <footer>
           <p>
             {" "}
-            © {new Date().getFullYear()}, Built by Anna Bendahan with
+            © {new Date().getFullYear()}, BUILT BY ANNA BENDAHAN WITH
             {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>{" "}
+            <a href="https://www.gatsbyjs.org">GATSBY</a>{" "}
           </p>
         </footer>
       </div>
