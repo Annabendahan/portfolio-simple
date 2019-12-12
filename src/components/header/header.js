@@ -11,19 +11,18 @@ const Header = ({ siteTitle }) => (
       fontWeight: `500`,
       width: `100%`,
       position: `fixed`,
+      zIndex: `999`,
       color: `black`,
     }}
   >
     <div
       style={{
         display: `flex`,
+        width: `100%`,
+        justifyContent: `space-between`,
       }}
     >
-      <p
-        style={{
-          flex: `0 0 70%`,
-        }}
-      >
+      <p>
         {" "}
         <svg
           style={{ marginRight: `20px` }}
@@ -38,13 +37,7 @@ const Header = ({ siteTitle }) => (
         WEBDESIGN <b> & </b> CODE{" "}
       </p>
 
-      <div
-        style={{
-          flex: `0 0 30%`,
-          display: `flex`,
-          justifyContent: `space-between`,
-        }}
-      >
+      <div className="header__right">
         <p> AN.BENDAHAN@GMAIL.COM </p>
         <p>
           {" "}

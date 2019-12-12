@@ -1,0 +1,10 @@
+.header__right {
+  display: none;
+
+  @include breakpoint(s) {
+    display: flex;
+
+    display: flex;
+    justify-content: space-between;
+  }
+}

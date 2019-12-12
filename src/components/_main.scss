@@ -2,24 +2,50 @@
   color: black;
 }
 
+.red {
+  color: map-get($colors, pink);
+  font-size: 0.7rem;
+}
+
 .main_object {
   margin: auto;
-  padding-left: 70px;
-  padding-top: 100px;
-  width: 800px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+  position: relative;
+  z-index: 4;
+
+  @include breakpoint(s) {
+    padding-top: 100px;
+  }
   img {
-    position: relative;
-    width: 800px;
-    z-index: 4;
-    margin-top: 50px;
+    width: 300px;
+    @include breakpoint(s) {
+      width: 600px;
+    }
+
+    @include breakpoint(l) {
+      width: 600px;
+    }
+    @include breakpoint(xl) {
+      width: 800px;
+    }
   }
-  h1 {
-    margin-left: -150px;
-    position: relative;
-    z-index: 5;
+  .pic1 {
+    display: none;
+    @include breakpoint(s) {
+      display: block;
+    }
   }
-  @include breakpoint(xxl) {
-    padding-left: 170px;
+  .pic2 {
+    display: block;
+    margin-left: 80px;
+    margin-top: 20px;
+    @include breakpoint(s) {
+      display: none;
+    }
   }
 }
 
@@ -28,6 +54,15 @@
   top: 50%;
   left: 30px;
   line-height: 100.2%;
+  svg {
+    margin-bottom: 40px;
+  }
+  p {
+    display: none;
+    @include breakpoint(s) {
+      display: block;
+    }
+  }
 }
 
 .main h2 {
@@ -53,12 +88,16 @@
 .projet__picture {
   width: 250px;
   height: 250px;
+  object-fit: cover;
 }
 
 .section {
   border-bottom: 0.5px #c4c4c4 solid;
   padding: 75px;
-  padding-left: 100px;
+  padding-left: 75px;
+  @include breakpoint(s) {
+    padding-left: 100px;
+  }
   &__projets {
     overflow-x: scroll;
     &__each {
@@ -105,6 +144,9 @@
 .projet {
   margin-right: 100px;
   width: 300px;
+  a {
+    text-decoration: none;
+  }
   p {
     margin-bottom: 5px;
   }
