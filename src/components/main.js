@@ -208,13 +208,7 @@ class Main extends Component {
             <div className="section__contact">
               <div>
                 {" "}
-                <form
-                  name="contact"
-                  netlify
-                  method="POST"
-                  data-netlify="true"
-                  data-netlify-honeypot="bot-field"
-                >
+                <form name="contact" method="POST" data-netlify="true">
                   <h2>
                     <label>
                       <input type="text" name="name" placeholder="nom" />
@@ -255,6 +249,8 @@ class Main extends Component {
                       />
                     </svg>
                   </p>
+                  <input type="hidden" name="bot-field" />
+                  <input type="hidden" name="form-name" value="contact" />
                 </form>
               </div>
 
