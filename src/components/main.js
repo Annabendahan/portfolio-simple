@@ -47,7 +47,7 @@ class Main extends Component {
 
     return (
       <div>
-        <SEO title="Main" />
+        <SEO title="Portfolio" />
 
         <div className="main_object">
           <img className="pic1" src={mainPic2} alt="main_pic" />
@@ -118,15 +118,15 @@ class Main extends Component {
 
           <div className="section__outils">
             <div>
-              <p> DESIGN: </p>
+              <p> CONCEPTION: </p>
               <p> FIGMA, SKETCH, ILLUSTRATOR, INDESIGN, VELVETYNE, AWWWARDS </p>
             </div>
             <div>
               <p> CODE: </p>
               <p>
                 {" "}
-                REACT.JS, GATSBY.JS, VUE.JS, RUBY ON RAILS, GRAPHQL, CSS
-                GENERATORS...{" "}
+                REACT.JS, GATSBY.JS, VUE.JS, RUBY ON RAILS, GRAPHQL, WORDPRESS
+                CMS, CSS GENERATORS...{" "}
               </p>
             </div>
           </div>
