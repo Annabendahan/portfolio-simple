@@ -48,12 +48,11 @@ class Main extends Component {
     return (
       <div>
         <SEO title="Main" />
-        <ScrollAnimation animateIn="fadeIn">
-          <div className="main_object">
-            <img className="pic1" src={mainPic2} alt="main_pic" />
-            <img className="pic2" src={picSmall} alt="main_pic" />
-          </div>
-        </ScrollAnimation>
+
+        <div className="main_object">
+          <img className="pic1" src={mainPic2} alt="main_pic" />
+          <img className="pic2" src={picSmall} alt="main_pic" />
+        </div>
 
         <div className="text-left">
           <svg
