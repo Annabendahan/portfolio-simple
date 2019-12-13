@@ -17,37 +17,85 @@ import easy from "../images/easy.png"
 import picSmall from "../images/picMainsmall.png"
 
 class Main extends Component {
+  state = {
+    mounted: false,
+    num: "03",
+  }
+
+  componentDidMount() {
+    setTimeout(
+      function() {
+        this.setState({ mounted: true })
+      }.bind(this),
+      3000
+    )
+    setTimeout(
+      function() {
+        this.setState({ num: "02" })
+      }.bind(this),
+      1000
+    )
+    setTimeout(
+      function() {
+        this.setState({ num: "01" })
+      }.bind(this),
+      2000
+    )
+    setTimeout(
+      function() {
+        this.setState({ num: "00" })
+      }.bind(this),
+      3000
+    )
+  }
+
   render() {
+    console.log(this.state.mounted)
     let d = new Date()
     let day = d.getDay()
     let today = ""
 
     switch (day) {
       case 1:
-        today = "LUNDI"
+        today = "MONDAY"
         break
       case 2:
-        today = "MARDI"
+        today = "TUESDAY"
         break
       case 3:
-        today = "MERCREDI"
+        today = "WEDNESDAY"
         break
       case 4:
-        today = "JEUDI"
+        today = "THURSDAY"
         break
       case 5:
-        today = "VENDREDI"
+        today = "FRIDAY"
         break
       case 6:
-        today = "SAMEDI"
+        today = "SATURDAY"
       case 7:
-        today = "DIMANCHE"
+        today = "SUNDAY"
         break
     }
 
     return (
       <div>
         <SEO title="Portfolio" />
+
+        <div
+          className="landing"
+          style={
+            {
+              //display: this.state.mounted ? "none" : "block",
+            }
+          }
+        >
+          {" "}
+          <div className="landing__content">
+            <p className="num">{this.state.num}</p>
+            <p>HELLOOO</p>
+          </div>
+        </div>
 
         <div className="main_object">
           <img className="pic1" src={mainPic2} alt="main_pic" />
@@ -70,21 +118,21 @@ class Main extends Component {
 
           <p>
             {" "}
-            CE QUE JE FAIS: <br />
-            CREATION DE SITES INTERNET <br />
+            WHAT I DO: <br />
+            WEBSITE CREATION <br />
             DESIGN <b> & </b> CODE{" "}
           </p>
 
           <p>
             {" "}
-            DISPONIBILITÉ: <br />
-            JANVIER 2020{" "}
+            AVAILAIBLE: <br />
+            JANUARY 2020{" "}
           </p>
         </div>
 
         <div className="section">
           <p className="">
-            BIENVENUE ICI ! BONNE VISITE <b> & </b> BON {today}{" "}
+            WELCOME HERE ! ENJOY YOUR VISIT <b> & </b> HAVE A NICE {today}{" "}
             <svg
               width="16"
               height="12"
@@ -100,33 +148,38 @@ class Main extends Component {
           </p>
 
           <ScrollAnimation animateIn="fadeIn">
-            <h2> À propos </h2>
+            <h2> About </h2>
           </ScrollAnimation>
-          <p className="">ANNA, 24, DEVELOPPEUSE WEB</p>
+          <p className="">ANNA, 24, WEB DEVELOPPER</p>
           <p className="">
-            BIENVENUE DANS MON PORTFOLIO ! JE SUIS ANNA BENDAHAN, DÉVELOPPEUSE
-            FULLSTACK EN FREELANCE DEPUIS MAINTENANT DEUX ANS, SPÉCIALISÉE EN
-            FRONT-END. JE CRÉE DES SITES INTERNETS À LA FOIS MODERNES ET
-            PERFORMANTS, EN UTILISANT DES TECHNOLOGIES RÉCENTES POUR RÉPONDRE AU
-            MIEUX À VOS BESOINS ET ATTENTES.{" "}
+            PARIS BASED FREELANCE DEVELOPER FOR 2 YEARS NOW, I AM SPECIALISED IN
+            FRONT-END DEVELOPEMENT. BECAUSE A SUCCESSSFUL PROJECT COMBINES ART &
+            TECHNOLOGY, MY GOAL IS TO CREATE MODERN & EFFICIENT WEBSITES, WHICH
+            ARE NICE AND USER FRIENDLY.{" "}
           </p>
         </div>
         <div className="section ">
           <ScrollAnimation animateIn="fadeIn">
-            <h2> Outils</h2>
+            <h2> Tools</h2>
           </ScrollAnimation>
 
           <div className="section__outils">
             <div>
-              <p> CONCEPTION: </p>
-              <p> FIGMA, SKETCH, ILLUSTRATOR, INDESIGN, VELVETYNE, AWWWARDS </p>
+              <p> DESIGN: </p>
+              <p>
+                {" "}
+                AWWWARDS-INSTAGRAM TO GET INSPI, FIGMA-SKETCH-ILLUSTRATOR TO
+                CREATE THE LAYOUTS, COOLORS TO MATCH COLORS, VELVETYNE TO FIND
+                NICE TYPOS{" "}
+              </p>
             </div>
             <div>
               <p> CODE: </p>
               <p>
                 {" "}
-                REACT.JS, GATSBY.JS, VUE.JS, RUBY ON RAILS, GRAPHQL, WORDPRESS
-                CMS, CSS GENERATORS...{" "}
+                I USE MOSTLY JS FRAMEWORKS (REACT, VUE), USE
+                GATSBY.JS-GRAPHQL-CMS TO CREATE MANAGEABLE WEBSITES, BUT ALSO
+                WORK WITH APIs{" "}
               </p>
             </div>
           </div>
@@ -134,7 +187,7 @@ class Main extends Component {
 
         <ScrollAnimation animateIn="fadeIn">
           <div className="section section__projets ">
-            <p> PROJETS </p>
+            <p> PROJECTS </p>
             <svg
               width="84"
               height="8"
@@ -156,7 +209,7 @@ class Main extends Component {
                   {" "}
                   DESIGN <b> & </b> CODE{" "}
                 </p>
-                <p className="red"> BIENTÔT DISPONIBLE </p>
+                <p className="red"> AVAILABLE SOON </p>
               </div>
               <div className="projet">
                 <a href="https://qmavocat.netlify.com/" target="blank">
@@ -182,7 +235,7 @@ class Main extends Component {
                 <a href="https://annabdh.netlify.com/" target="blank">
                   <img className="projet__picture" src={phone} alt="mainpic" />
                   <p> 2018 </p>
-                  <h5> Portfolio précédent </h5>
+                  <h5> Previous portfolio </h5>
                   <p>
                     {" "}
                     DESIGN <b> & </b> CODE{" "}
@@ -197,7 +250,7 @@ class Main extends Component {
                   {" "}
                   DESIGN <b> & </b> CODE{" "}
                 </p>
-                <p className="red"> EN MAINTENANCE </p>
+                <p className="red"> MAINTENANCE </p>
               </div>
             </div>
           </div>
@@ -211,14 +264,10 @@ class Main extends Component {
                 <form name="contact" method="POST" data-netlify="true">
                   <h2>
                     <label>
-                      <input type="text" name="name" placeholder="nom" />
+                      <input type="text" name="name" placeholder="name" />
                     </label>
                   </h2>
-                  <h2>
-                    <label>
-                      <input type="text" name="name" placeholder="prénom" />
-                    </label>
-                  </h2>
+
                   <p>
                     <label>
                       <input type="email" name="email" placeholder="EMAIL" />
@@ -230,11 +279,11 @@ class Main extends Component {
                       name="story"
                       rows="3"
                       cols="33"
-                      placeholder="Votre message ici"
+                      placeholder="Your message here"
                     ></textarea>
                   </p>
                   <p>
-                    <button type="submit">ENVOYER</button>
+                    <button type="submit">SEND</button>
                     <br />
                     <svg
                       width="84"
@@ -252,10 +301,6 @@ class Main extends Component {
                   <input type="hidden" name="bot-field" />
                   <input type="hidden" name="form-name" value="contact" />
                 </form>
-              </div>
-
-              <div className="envoyer">
-                <p className="nomargin"> ENVOYER </p>
               </div>
             </div>
           </div>
