@@ -13,7 +13,8 @@
 
 .landing {
   background-color: map-get($colors, beige);
-  position: absolute;
+  position: fixed;
+  overflow: hidden;
   top: 0px;
   text-align: center;
   width: 100vw;
@@ -98,12 +99,6 @@
       display: block;
     }
   }
-}
-
-.main h2 {
-  font-family: Fira Code;
-  font-size: 4rem;
-  font-weight: 400;
 }
 
 .main h3 {
