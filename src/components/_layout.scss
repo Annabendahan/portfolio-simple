@@ -254,11 +254,11 @@ h2 {
   font-family: "El Messiri", sans-serif;
   font-weight: 100;
   text-rendering: optimizeLegibility;
-  font-size: 3.25rem;
+  font-size: 5.25rem;
   line-height: 1.1;
 
   @include breakpoint(m) {
-    font-size: 4.25rem;
+    font-size: 8.25rem;
   }
   @include breakpoint(l) {
     font-size: 8.25rem;
