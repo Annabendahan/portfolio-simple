@@ -84,11 +84,9 @@ class Main extends Component {
 
         <div
           className="landing"
-          style={
-            {
-              //display: this.state.mounted ? "none" : "block",
-            }
-          }
+          style={{
+            display: this.state.mounted ? "none" : "block",
+          }}
         >
           {" "}
           <div className="landing__content">
