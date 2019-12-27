@@ -17,40 +17,7 @@ import easy from "../images/easy.png"
 import picSmall from "../images/picMainsmall.png"
 
 class Main extends Component {
-  state = {
-    mounted: false,
-    num: "03",
-  }
-
-  componentDidMount() {
-    setTimeout(
-      function() {
-        this.setState({ mounted: true })
-      }.bind(this),
-      3200
-    )
-    setTimeout(
-      function() {
-        this.setState({ num: "02" })
-      }.bind(this),
-      1000
-    )
-    setTimeout(
-      function() {
-        this.setState({ num: "01" })
-      }.bind(this),
-      2000
-    )
-    setTimeout(
-      function() {
-        this.setState({ num: "00" })
-      }.bind(this),
-      3000
-    )
-  }
-
   render() {
-    console.log(this.state.mounted)
     let d = new Date()
     let day = d.getDay()
     let today = ""
@@ -82,23 +49,7 @@ class Main extends Component {
       <div>
         <SEO title="Portfolio" />
 
-        <div
-          className="landing"
-          style={{
-            display: this.state.mounted ? "none" : "block",
-          }}
-        >
-          {" "}
-          <div className="landing__content">
-            <p className="num">{this.state.num}</p>
-            <p>HELLOOO</p>
-          </div>
-        </div>
-
-        <div
-          className="main"
-          style={{ display: this.state.mounted ? "block" : "none" }}
-        >
+        <div className="main">
           <div className="main_object">
             <img className="pic1" src={mainPic2} alt="main_pic" />
             <img className="pic2" src={picSmall} alt="main_pic" />
